@@ -86,7 +86,7 @@ This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a 
     ```
     sudo docker build --pull --rm -f Dockerfile -t kby-ai-live:latest .
     ```
-  - Run docker
+  - Run the Docker container:
     ```
     sudo docker run -v ./license.txt:/home/openvino/kby-ai-live/license.txt -p 8080:8080 kby-ai-live
     ```
