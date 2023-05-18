@@ -63,7 +63,7 @@ This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a 
 ## How to run
 
 ### 1. System Requirements
-  - CPU: 4 cores or more (Recommended: 8 cores)
+  - CPU: 2 cores or more (Recommended: 8 cores)
   - RAM: 4 GB or more (Recommended: 8 GB)
   - HDD: 4 GB or more (Recommended: 8 GB)
   - OS: Ubuntu 20.04 or later
