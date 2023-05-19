@@ -133,7 +133,7 @@ def check_liveness():
 
         status = "ok"
         faceState = {"is_not_front": isNotFront, "is_occluded": isOcclusion, "eye_closed": isEyeClosure, "mouth_opened": isMouthOpening, 
-                     "is_boundary_face": isBoundary, "is_small": isSmall, "quality": quality, "luminance": luminance, "result": result}
+                     "is_boundary_face": isBoundary, "is_small": isSmall, "quality": quality, "luminance": luminance, "result": result, "liveness_score": faceBoxes[0].liveness}
         response = jsonify({"face_state": faceState, "faces": faces})
 
         response.status_code = 200
