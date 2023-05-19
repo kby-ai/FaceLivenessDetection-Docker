@@ -23,7 +23,7 @@ It includes features that allow for testing face liveness detection using both i
   | Eye Closure Detection        | Eye Closure Detection       |
   | Mouth Opening Check        | Mouth Opening Check        |
 
-
+> Reference
 > - [Face Liveness Detection - Android(Basic SDK)](https://github.com/kby-ai/FaceLivenessDetection-Android)
 > - [Face Liveness Detection - iOS(Basic SDK)](https://github.com/kby-ai/FaceLivenessDetection-iOS)
 > - [Face Recognition - Android(Stdndard SDK)](https://github.com/kby-ai/FaceRecognition-Android)
@@ -70,7 +70,7 @@ This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a 
   - OS: Ubuntu 20.04 or later
   - Dependency: OpenVINO™ Runtime (Version: 2022.3)
 
-### 2. Setup and test
+### 2. Setup and Test
   - Clone the project:
     ```
     git clone https://github.com/kby-ai/FaceLivenessDetection-Docker.git
@@ -104,11 +104,94 @@ This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a 
     
     Test with a base64-encoded image: Send a POST request to http://{xx.xx.xx.xx}:8080/check_liveness_base64.
     
-    You can download the Postman collection to easily access and use these endpoints. [click here](https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/main/postman/kby-ai-live.postman_collection.json)
+    You can download the Postman collection to easily access and use these endpoints. [click here](https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/main/postman/kby-ai-live.postman_collection.json)   
     
+## About SDK
 
+### 1. Initializing an SDK
+
+- Step One
+
+  First, obtain the machine code for activation and request a license based on the machine code.
+  ```
+  machineCode = getMachineCode()
+  print("machineCode: ", machineCode.decode('utf-8'))
+  ```
+  
+- Step Two
+
+  Next, activate the SDK using the received license.
+  ```
+  setActivation(license.encode('utf-8'))
+  ```  
+  If activation is successful, the return value will be SDK_SUCCESS. Otherwise, an error value will be returned.
+
+- Step Three
+
+  After activation, call the initialization function of the SDK.
+  ```
+  initSDK("data".encode('utf-8'))
+  ```
+  The first parameter is the path to the model.
+
+  If initialization is successful, the return value will be SDK_SUCCESS. Otherwise, an error value will be returned.
+
+### 2. Enum and Structure
+  - SDK_ERROR
+  
+    This enumeration represents the return value of the 'initSDK' and 'setActivation' functions.
+
+    | Feature| Value | Name |
+    |------------------|------------------|------------------|
+    | Successful activation or initialization        | 0    | SDK_SUCCESS |
+    | License key error        | -1    | SDK_LICENSE_KEY_ERROR |
+    | AppID error (Not used in Server SDK)       | -2    | SDK_LICENSE_APPID_ERROR |
+    | License expiration        | -3    | SDK_LICENSE_EXPIRED |
+    | Not activated      | -4    | SDK_NO_ACTIVATED |
+    | Failed to initialize SDK       | -5    | SDK_INIT_ERROR |
+
+- FaceBox
+  
+    This structure represents the output of the face detection function.
+
+    | Feature| Type | Name |
+    |------------------|------------------|------------------|
+    | Face rectangle        | int    | x1, y1, x2, y2 |
+    | Liveness score (0 ~ 1)        | float    | liveness |
+    | Face angles (-45 ~ 45)        | float    | yaw, roll, pitch |
+    | Face quality (0 ~ 1)        | float    | face_quality |
+    | Face luminance (0 ~ 255)       | float    | face_luminance |
+    | Eye distance (pixels)       | float    | eye_dist |
+    | Eye closure (0 ~ 1)       | float    | left_eye_closed, right_eye_closed |
+    | Face occlusion (0 ~ 1)       | float    | face_occlusion |
+    | Mouth opening (0 ~ 1)       | float    | mouth_opened |
+    | 68 points facial landmark        | float[]    | landmarks_68 |
+  
+    > 68 points facial landmark
     
+    <img src="https://user-images.githubusercontent.com/125717930/235560305-ee1b6a39-5dab-4832-a214-732c379cabfd.png" width=500/>
+
+### 3. APIs
+  - Face Detection
+  
+    The Face SDK provides a single API for detecting faces, performing liveness detection, determining face orientation (yaw, roll, pitch), assessing face quality, detecting facial occlusion, eye closure, mouth opening, and identifying facial landmarks.
     
+    The function can be used as follows:
 
+    ```
+    faceBoxes = (FaceBox * maxFaceCount)()
+    faceCount = faceDetection(image_np, image_np.shape[1], image_np.shape[0], faceBoxes, maxFaceCount)
+    ```
+    
+    This function requires 5 parameters.
+    * The first parameter: the byte array of the RGB image buffer.
+    * The second parameter: the width of the image.
+    * The third parameter: the height of the image.
+    * The fourth parameter: the 'FaceBox' array allocated with 'maxFaceCount' for storing the detected faces.
+    * The fifth parameter: the count allocated for the maximum 'FaceBox' objects.
 
+    The function returns the count of the detected face.
 
+### 4. Thresholds
+  The default thresholds are as the following below:
+  https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/6aafd08dba5093600008ec66df39f362e53f9bb8/app.py#L17-L29
