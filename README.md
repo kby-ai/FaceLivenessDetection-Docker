@@ -35,12 +35,13 @@ It includes features that allow for testing face liveness detection using both i
 
 ### Postman
   To test the API, you can use Postman. Here are the endpoints for testing:
-  - Test with an image file: Send a POST request to http://18.222.214.79:8080/check_liveness.
-  - Test with a base64-encoded image: Send a POST request to http://18.222.214.79:8080/check_liveness_base64.
+  - Test with an image file: Send a POST request to http://18.221.33.238:8080/check_liveness.
+  - Test with a base64-encoded image: Send a POST request to http://18.221.33.238:8080/check_liveness_base64.
 
     You can download the Postman collection to easily access and use these endpoints. [click here](https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/main/postman/kby-ai-live.postman_collection.json)
     
-    ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/f0f91ad7-220c-4453-a6c5-77eec26d446f)
+    ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/b1ee85eb-cfff-4fd6-aca6-c9374a2f1bfe)
+
 
 ## SDK License
 
