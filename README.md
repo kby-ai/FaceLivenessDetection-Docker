@@ -108,7 +108,7 @@ This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a 
     
 ## About SDK
 
-### 1. Initializing an SDK
+### 1. Initializing the SDK
 
 - Step One
 
