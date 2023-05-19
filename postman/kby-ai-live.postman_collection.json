@@ -22,13 +22,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://18.222.214.79:8080/check_liveness",
+					"raw": "http://18.221.33.238:8080/check_liveness",
 					"protocol": "http",
 					"host": [
 						"18",
-						"222",
-						"214",
-						"79"
+						"221",
+						"33",
+						"238"
 					],
 					"port": "8080",
 					"path": [
@@ -53,13 +53,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://18.222.214.79:8080/check_liveness_base64",
+					"raw": "http://18.221.33.238:8080/check_liveness_base64",
 					"protocol": "http",
 					"host": [
 						"18",
-						"222",
-						"214",
-						"79"
+						"221",
+						"33",
+						"238"
 					],
 					"port": "8080",
 					"path": [
