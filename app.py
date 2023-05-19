@@ -53,21 +53,41 @@ app = Flask(__name__)
 
 @app.route('/check_liveness', methods=['POST'])
 def check_liveness():
+    faces = []
+    isNotFront = None
+    isOcclusion = None
+    isEyeClosure = None
+    isMouthOpening = None
+    isBoundary = None
+    isSmall = None
+    quality = None
+    luminance = None
+    livenessScore = None
+
     file = request.files['file']
-    image = Image.open(file)
+
+    try:
+        image = Image.open(file)
+    except:
+        result = "Failed to open file"
+        faceState = {"is_not_front": isNotFront, "is_occluded": isOcclusion, "eye_closed": isEyeClosure, "mouth_opened": isMouthOpening, 
+                        "is_boundary_face": isBoundary, "is_small": isSmall, "quality": quality, "luminance": luminance, "result": result, "liveness_score": livenessScore}
+        response = jsonify({"face_state": faceState, "faces": faces})
+
+        response.status_code = 200
+        response.headers["Content-Type"] = "application/json; charset=utf-8"
+        return response
+
+
     image_np = np.asarray(image)
 
     faceBoxes = (FaceBox * maxFaceCount)()
     faceCount = faceDetection(image_np, image_np.shape[1], image_np.shape[0], faceBoxes, maxFaceCount)
 
-    i = 0
-    faces = []
-    while (i < faceCount):
-        j = 0
+    for i in range(faceCount):
         landmark_68 = []
-        while(j < 68):
+        for j in range(68):
             landmark_68.append({"x": faceBoxes[i].landmark_68[j * 2], "y": faceBoxes[i].landmark_68[j * 2 + 1]})
-            j = j + 1
         faces.append({"x1": faceBoxes[i].x1, "y1": faceBoxes[i].y1, "x2": faceBoxes[i].x2, "y2": faceBoxes[i].y2, 
                       "liveness": faceBoxes[i].liveness, 
                       "yaw": faceBoxes[i].yaw, "roll": faceBoxes[i].roll, "pitch": faceBoxes[i].pitch,
@@ -75,7 +95,6 @@ def check_liveness():
                       "left_eye_closed": faceBoxes[i].left_eye_closed, "right_eye_closed": faceBoxes[i].right_eye_closed,
                       "face_occlusion": faceBoxes[i].face_occlusion, "mouth_opened": faceBoxes[i].mouth_opened,
                       "landmark_68": landmark_68})
-        i = i + 1
     
     result = ""
     if faceCount == 0:
@@ -83,7 +102,8 @@ def check_liveness():
     elif faceCount > 1:
         result = "Multiple face"
     else:
-        if faceBoxes[0].liveness > livenessThreshold:
+        livenessScore = faceBoxes[0].liveness
+        if livenessScore > livenessThreshold:
             result = "Real"
         else:
             result = "Spoof"
@@ -131,17 +151,9 @@ def check_liveness():
         else:
             luminance = "Light"
 
-        status = "ok"
-        faceState = {"is_not_front": isNotFront, "is_occluded": isOcclusion, "eye_closed": isEyeClosure, "mouth_opened": isMouthOpening, 
-                     "is_boundary_face": isBoundary, "is_small": isSmall, "quality": quality, "luminance": luminance, "result": result, "liveness_score": faceBoxes[0].liveness}
-        response = jsonify({"face_state": faceState, "faces": faces})
-
-        response.status_code = 200
-        response.headers["Content-Type"] = "application/json; charset=utf-8"
-        return response
-
-    status = "ok"
-    response = jsonify({"face_state": {"result": result}, "faces": faces})
+    faceState = {"is_not_front": isNotFront, "is_occluded": isOcclusion, "eye_closed": isEyeClosure, "mouth_opened": isMouthOpening, 
+                    "is_boundary_face": isBoundary, "is_small": isSmall, "quality": quality, "luminance": luminance, "result": result, "liveness_score": livenessScore}
+    response = jsonify({"face_state": faceState, "faces": faces})
 
     response.status_code = 200
     response.headers["Content-Type"] = "application/json; charset=utf-8"
@@ -149,24 +161,43 @@ def check_liveness():
 
 @app.route('/check_liveness_base64', methods=['POST'])
 def check_liveness_base64():
-    content = request.get_json()
-    imageBase64 = content['base64']
-    image_data = base64.b64decode(imageBase64)
+    faces = []
+    isNotFront = None
+    isOcclusion = None
+    isEyeClosure = None
+    isMouthOpening = None
+    isBoundary = None
+    isSmall = None
+    quality = None
+    luminance = None
+    livenessScore = None
 
-    image = Image.open(io.BytesIO(image_data))
+    content = request.get_json()
+
+    try:
+        imageBase64 = content['base64']
+        image_data = base64.b64decode(imageBase64)
+        image = Image.open(io.BytesIO(image_data))
+    except:
+        result = "Failed to open file"
+        faceState = {"is_not_front": isNotFront, "is_occluded": isOcclusion, "eye_closed": isEyeClosure, "mouth_opened": isMouthOpening, 
+                        "is_boundary_face": isBoundary, "is_small": isSmall, "quality": quality, "luminance": luminance, "result": result, "liveness_score": livenessScore}
+        response = jsonify({"face_state": faceState, "faces": faces})
+
+        response.status_code = 200
+        response.headers["Content-Type"] = "application/json; charset=utf-8"
+        return response
+
+
     image_np = np.asarray(image)
 
     faceBoxes = (FaceBox * maxFaceCount)()
     faceCount = faceDetection(image_np, image_np.shape[1], image_np.shape[0], faceBoxes, maxFaceCount)
 
-    i = 0
-    faces = []
-    while (i < faceCount):
-        j = 0
+    for i in range(faceCount):
         landmark_68 = []
-        while(j < 68):
+        for j in range(68):
             landmark_68.append({"x": faceBoxes[i].landmark_68[j * 2], "y": faceBoxes[i].landmark_68[j * 2 + 1]})
-            j = j + 1
         faces.append({"x1": faceBoxes[i].x1, "y1": faceBoxes[i].y1, "x2": faceBoxes[i].x2, "y2": faceBoxes[i].y2, 
                       "liveness": faceBoxes[i].liveness, 
                       "yaw": faceBoxes[i].yaw, "roll": faceBoxes[i].roll, "pitch": faceBoxes[i].pitch,
@@ -174,15 +205,15 @@ def check_liveness_base64():
                       "left_eye_closed": faceBoxes[i].left_eye_closed, "right_eye_closed": faceBoxes[i].right_eye_closed,
                       "face_occlusion": faceBoxes[i].face_occlusion, "mouth_opened": faceBoxes[i].mouth_opened,
                       "landmark_68": landmark_68})
-        i = i + 1
-    
+
     result = ""
     if faceCount == 0:
         result = "No face"
     elif faceCount > 1:
         result = "Multiple face"
     else:
-        if faceBoxes[0].liveness > livenessThreshold:
+        livenessScore = faceBoxes[0].liveness
+        if livenessScore > livenessThreshold:
             result = "Real"
         else:
             result = "Spoof"
@@ -230,17 +261,9 @@ def check_liveness_base64():
         else:
             luminance = "Light"
 
-        status = "ok"
-        faceState = {"is_not_front": isNotFront, "is_occluded": isOcclusion, "eye_closed": isEyeClosure, "mouth_opened": isMouthOpening, 
-                     "is_boundary_face": isBoundary, "is_small": isSmall, "quality": quality, "luminance": luminance, "result": result}
-        response = jsonify({"face_state": faceState, "faces": faces})
-
-        response.status_code = 200
-        response.headers["Content-Type"] = "application/json; charset=utf-8"
-        return response
-
-    status = "ok"
-    response = jsonify({"face_state": {"result": result}, "faces": faces})
+    faceState = {"is_not_front": isNotFront, "is_occluded": isOcclusion, "eye_closed": isEyeClosure, "mouth_opened": isMouthOpening, 
+                    "is_boundary_face": isBoundary, "is_small": isSmall, "quality": quality, "luminance": luminance, "result": result, "liveness_score": livenessScore}
+    response = jsonify({"face_state": faceState, "faces": faces})
 
     response.status_code = 200
     response.headers["Content-Type"] = "application/json; charset=utf-8"
