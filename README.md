@@ -32,7 +32,10 @@ It includes features that allow for testing face liveness detection using both i
 > - [Face Attribute - iOS(Premium SDK)](https://github.com/kby-ai/FaceAttribute-iOS)
 
 ## Try the API
-
+### Website
+  You can test the SDK using images from the following URL:
+  http://18.221.33.238:9000/
+  
 ### Postman
   To test the API, you can use Postman. Here are the endpoints for testing:
   - Test with an image file: Send a POST request to http://18.221.33.238:8080/check_liveness.
