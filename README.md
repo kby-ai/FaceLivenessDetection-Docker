@@ -2,6 +2,11 @@
   <img src="https://user-images.githubusercontent.com/125717930/225975240-24b9a8ad-8cc6-4d5f-9a91-1435951b0bd7.png" width="120" alt="Nest Logo" />
 </p>
 
+
+👏  We have published the Face Recognition SDK for the server.
+
+  - [FaceRecognition-Docker](https://github.com/kby-ai/FaceRecognition-Docker)
+
 # FaceLivenessDetection-Docker
 
 This project demonstrates an advanced face liveness detection technology implemented via a Dockerized Flask API.
