@@ -40,7 +40,7 @@ It includes features that allow for testing face liveness detection using both i
 
     You can download the Postman collection to easily access and use these endpoints. [click here](https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/main/postman/kby-ai-live.postman_collection.json)
     
-    ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/b1ee85eb-cfff-4fd6-aca6-c9374a2f1bfe)
+    ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/b24b1145-08af-46ca-8ffa-65aa020749b4)
 
 
 ## SDK License
