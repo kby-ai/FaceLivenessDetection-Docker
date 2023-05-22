@@ -115,7 +115,25 @@ This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a 
     Test with a base64-encoded image: Send a POST request to http://{xx.xx.xx.xx}:8080/check_liveness_base64.
     
     You can download the Postman collection to easily access and use these endpoints. [click here](https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/main/postman/kby-ai-live.postman_collection.json)   
+
+### 3. Execute the Gradio demo
+  - Setup Gradio
+    Ensure that you have the necessary dependencies installed. 
     
+    Gradio requires Python 3.6 or above. 
+    
+    You can install Gradio using pip by running the following command:
+    ```
+    pip install gradio
+    ```
+  - Run the demo
+    Run it using the following command:
+    ```
+    cd gradio
+    python demo.py
+    ```
+  - You can test within the following URL:    
+    http://127.0.0.1:9000    
 ## About SDK
 
 ### 1. Initializing the SDK
