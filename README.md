@@ -41,7 +41,7 @@ It includes features that allow for testing face liveness detection using both i
   You can test the SDK using images from the following URL:
   http://18.221.33.238:9000/
   
-  ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/201b8bb4-51c6-4bbb-8e0b-f772b13703b6)
+  ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/4fd2c1ca-3552-4c6e-b8c2-4a12d7c92ca6)
 
 ### Postman
   To test the API, you can use Postman. Here are the endpoints for testing:
