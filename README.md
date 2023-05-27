@@ -3,9 +3,13 @@
 </p>
 
 
-👏  We have published the Face Recognition SDK for the server.
+👏  We have published the Face Livness Detection, Face Recognition SDK and ID Card Recognition SDK for the server.
+
+  - [FaceLivenessDetection-Docker](https://github.com/kby-ai/FaceLivenessDetection-Docker)
 
   - [FaceRecognition-Docker](https://github.com/kby-ai/FaceRecognition-Docker)
+
+  - [IDCardRecognition-Docker](https://github.com/kby-ai/IDCardRecognition-Docker)
 
 # FaceLivenessDetection-Docker
 
@@ -28,11 +32,11 @@ It includes features that allow for testing face liveness detection using both i
   | Eye Closure Detection        | Eye Closure Detection       |
   | Mouth Opening Check        | Mouth Opening Check        |
 
-> Reference
+> For other solutions, please explore the following:
 > - [Face Liveness Detection - Android(Basic SDK)](https://github.com/kby-ai/FaceLivenessDetection-Android)
 > - [Face Liveness Detection - iOS(Basic SDK)](https://github.com/kby-ai/FaceLivenessDetection-iOS)
-> - [Face Recognition - Android(Stdndard SDK)](https://github.com/kby-ai/FaceRecognition-Android)
-> - [Face Recognition - iOS(Stdndard SDK)](https://github.com/kby-ai/FaceRecognition-iOS)
+> - [Face Recognition - Android(Standard SDK)](https://github.com/kby-ai/FaceRecognition-Android)
+> - [Face Recognition - iOS(Standard SDK)](https://github.com/kby-ai/FaceRecognition-iOS)
 > - [Face Attribute - Android(Premium SDK)](https://github.com/kby-ai/FaceAttribute-Android)
 > - [Face Attribute - iOS(Premium SDK)](https://github.com/kby-ai/FaceAttribute-iOS)
 
