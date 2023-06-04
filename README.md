@@ -43,7 +43,7 @@ It includes features that allow for testing face liveness detection using both i
 ## Try the API
 ### Online Demo
   You can test the SDK using images from the following URL:
-  http://18.221.33.238:9000/
+  http://18.221.33.238/
   
   ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/4fd2c1ca-3552-4c6e-b8c2-4a12d7c92ca6)
 
