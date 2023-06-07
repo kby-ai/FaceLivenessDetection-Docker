@@ -3,7 +3,7 @@
 </p>
 
 
-👏  We have published the Face Livness Detection, Face Recognition SDK and ID Card Recognition SDK for the server.
+👏  We have published the Face Liveness Detection, Face Recognition SDK and ID Card Recognition SDK for the server.
 
   - [FaceLivenessDetection-Docker](https://github.com/kby-ai/FaceLivenessDetection-Docker)
 
