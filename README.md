@@ -7,7 +7,11 @@
 
   - [FaceLivenessDetection-Docker](https://github.com/kby-ai/FaceLivenessDetection-Docker)
 
+  - [FaceLivenessDetection-Windows](https://github.com/kby-ai/FaceLivenessDetection-Windows)
+
   - [FaceRecognition-Docker](https://github.com/kby-ai/FaceRecognition-Docker)
+
+  - [FaceRecognition-Windows](https://github.com/kby-ai/FaceRecognition-Windows)
 
   - [IDCardRecognition-Docker](https://github.com/kby-ai/IDCardRecognition-Docker)
 
@@ -44,7 +48,7 @@ It includes features that allow for testing face liveness detection using both i
 ## Try the API
 ### Online Demo
   You can test the SDK using images from the following URL:
-  https://web.kby-ai.com/
+  https://web.kby-ai.com
   
   ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/4fd2c1ca-3552-4c6e-b8c2-4a12d7c92ca6)
 
