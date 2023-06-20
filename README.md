@@ -40,6 +40,7 @@ It includes features that allow for testing face liveness detection using both i
   | Mouth Opening Check        | Mouth Opening Check        |
 
 > For other solutions, please explore the following:
+>
 > [Face Liveness Detection - Android(Basic SDK)](https://github.com/kby-ai/FaceLivenessDetection-Android)
 > 
 > [Face Liveness Detection - iOS(Basic SDK)](https://github.com/kby-ai/FaceLivenessDetection-iOS)
