@@ -121,7 +121,9 @@ This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a 
     ```
     sudo docker run -v ./license.txt:/home/openvino/kby-ai-live/license.txt -p 8080:8080 kby-ai-live
     ```
-  - Send us the machine code and replace the license.txt file you received. Then, run the Docker container again.
+  - Send us the machine code and then we will give you a license key.
+    
+    After that, update the license.txt file by overwriting the license key that you received. Then, run the Docker container again.
     
     ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/216f1306-a758-4e47-a8fe-159f3c84f53b)
     
