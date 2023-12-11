@@ -90,6 +90,8 @@ This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a 
   WhatsApp: +19092802609
 
   Skype: live:.cid.66e2522354b1049b
+
+  Facebook: https://www.facebook.com/KBYAI
   
 ## How to run
 
