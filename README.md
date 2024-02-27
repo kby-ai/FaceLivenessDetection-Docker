@@ -4,18 +4,13 @@
   </a>  
 </p>
 
-👏 Product List
-
-https://github.com/kby-ai/Product
-
-👏  We have published the Face Liveness Detection, Face Recognition SDK and ID Card Recognition SDK for the server.
-
-  - [FaceLivenessDetection-Docker](https://github.com/kby-ai/FaceLivenessDetection-Docker)
-
-  - [FaceRecognition-Docker](https://github.com/kby-ai/FaceRecognition-Docker)
-
-  - [IDCardRecognition-Docker](https://github.com/kby-ai/IDCardRecognition-Docker)
-
+### 📚 Product & Resources - [Here](https://github.com/kby-ai/Product)
+### 💼 KYC Verification Demo - [Here](https://github.com/kby-ai/KYC-Verification-Demo-Android)
+### 🙋‍♀️ Docker Hub - [Here](https://hub.docker.com/r/kbyai/face-liveness-detection)
+```bash
+sudo docker pull kbyai/face-liveness-detection:latest
+sudo docker run -e LICENSE="xxxxx" -p 8080:8080 -p 9000:9000 kbyai/face-liveness-detection:latest
+```
 # FaceLivenessDetection-Docker
 ## Overview
 
