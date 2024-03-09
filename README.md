@@ -65,15 +65,14 @@ This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a 
 
 - The code below shows how to use the license: https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/6aafd08dba5093600008ec66df39f362e53f9bb8/app.py#L36-L48
 
-- In order to request the license, please provide us with the machine code obtained from the "getMachineCode" function.
+- To request the license, please provide us with the machine code obtained from the "getMachineCode" function.
 
-  Please contact us:
-  ```
-  Email: contact@kby-ai.com
-  Telegram: @kbyai
-  WhatsApp: +19092802609
-  Skype: live:.cid.66e2522354b1049b
-  Facebook: https://www.facebook.com/KBYAI
+#### Please contact us:
+🧙`Email:` contact@kby-ai.com</br>
+🧙`Telegram:` @kbyai</br>
+🧙`WhatsApp:` +19092802609</br>
+🧙`Skype:` live:.cid.66e2522354b1049b</br>
+🧙`Facebook:` https://www.facebook.com/KBYAI</br>
   
 ## How to run
 
