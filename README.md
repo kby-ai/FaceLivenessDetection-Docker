@@ -25,7 +25,7 @@ It includes features that allow for testing face liveness detection using both i
   | 🔽 Face Liveness Detection      | Face Recognition |
   |------------------|------------------|
   | <b>Face Detection</b>        | Face Detection    |
-  | <b>Face Liveness Detection</b>        | Face Recognition(Face Matchin or Face Comparison)    |
+  | <b>Face Liveness Detection</b>        | Face Recognition(Face Matching or Face Comparison)    |
   | <b>Pose Estimation</b>        | Pose Estimation    |
   | <b>68 points Face Landmark Detection</b>        | 68 points Face Landmark Detection    |
   | <b>Face Quality Calculation</b>        | Face Occlusion Detection        |
