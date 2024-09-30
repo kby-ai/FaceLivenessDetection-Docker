@@ -15,11 +15,11 @@ sudo docker run -e LICENSE="xxxxx" -p 8080:8080 -p 9000:9000 kbyai/face-liveness
 # FaceLivenessDetection-Docker
 ## Overview
 
-This repository demonstrates an advanced face liveness detection technology implemented via a Dockerized Flask API.<br/>
-It includes features that allow for testing face liveness detection using both image files and base64-encoded images.
+This repository demonstrates an advanced `face liveness detection` technology implemented via a `Dockerized Flask API`.<br/>
+It includes features that allow for testing `face liveness detection` using both image files and `base64-encoded` images.
 
-> In this repo, we integrated KBY-AI's Face Liveness Detection solution into Linux Server SDK by docker container.<br/>
-> We can customize the SDK to align with your specific requirements.
+> In this repo, we integrated `KBY-AI`'s `Face Liveness Detection` solution into `Linux Server SDK` by `docker container`.<br/>
+> We can customize the `SDK` to align with your specific requirements.
 
 ### ◾FaceSDK(Server) Details
   | 🔽 Face Liveness Detection      | Face Recognition |
@@ -41,32 +41,32 @@ It includes features that allow for testing face liveness detection using both i
   | 3        | [Face Recognition - Linux](https://github.com/kby-ai/FaceRecognition-Docker)    | Face Recognition |
   | 4        | [Face Recognition - Windows](https://github.com/kby-ai/FaceRecognition-Windows)    | Face Recognition |
 
-> To get Face SDK(mobile), please visit products [here](https://github.com/kby-ai/Product):<br/>
+> To get `Face SDK(mobile)`, please visit products [here](https://github.com/kby-ai/Product):<br/>
 
 ## Try the API
 ### Online Demo
   You can test the SDK using images from the following URL:
-  https://web.kby-ai.com
+  `https://web.kby-ai.com`
   
   ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/4fd2c1ca-3552-4c6e-b8c2-4a12d7c92ca6)
 
 ### Postman
-  To test the API, you can use Postman. Here are the endpoints for testing:
-  - Test with an image file: Send a POST request to http://18.221.33.238:8080/check_liveness.
-  - Test with a base64-encoded image: Send a POST request to http://18.221.33.238:8080/check_liveness_base64.
+  To test the `API`, you can use `Postman`. Here are the endpoints for testing:
+  - Test with an image file: Send a `POST` request to `http://18.221.33.238:8080/check_liveness`.
+  - Test with a `base64-encoded` image: Send a `POST` request to `http://18.221.33.238:8080/check_liveness_base64`.
 
-    You can download the Postman collection to easily access and use these endpoints. [click here](https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/main/postman/kby-ai-live.postman_collection.json)
+    You can download the `Postman` collection to easily access and use these endpoints. [click here](https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/main/postman/kby-ai-live.postman_collection.json)
     
     ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/b24b1145-08af-46ca-8ffa-65aa020749b4)
 
 
 ## SDK License
 
-This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a license per machine.
+This project uses `KBY-AI`'s `Face Liveness Detection` `Server SDK`, which requires a license per machine.
 
 - The code below shows how to use the license: https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/6aafd08dba5093600008ec66df39f362e53f9bb8/app.py#L36-L48
 
-- To request the license, please provide us with the machine code obtained from the "getMachineCode" function.
+- To request the license, please provide us with the `machine code` obtained from the `getMachineCode` function.
 
 #### Please contact us:</br>
 🧙`Email:` contact@kby-ai.com</br>
@@ -86,68 +86,68 @@ This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a 
 
 ### 2. Setup and Test
   - Clone the project:
-    ```
+    ```bash
     git clone https://github.com/kby-ai/FaceLivenessDetection-Docker.git
     ```
-  - Download the model from Google Drive: [click here](https://drive.google.com/file/d/1bYl0p5uHXuTQoETdbRwYLpd3huOqA3wY/view?usp=share_link)
-    ```
+  - Download the model from `Google Drive`: [click here](https://drive.google.com/file/d/1bYl0p5uHXuTQoETdbRwYLpd3huOqA3wY/view?usp=share_link)
+    ```bash
     cd FaceLivenessDetection-Docker
     
     wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1bYl0p5uHXuTQoETdbRwYLpd3huOqA3wY' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1bYl0p5uHXuTQoETdbRwYLpd3huOqA3wY" -O data.zip && rm -rf /tmp/cookies.txt
     
     unzip data.zip
     ```
-  - Build the Docker image:
-    ```
+  - Build the `Docker` image:
+    ```bash
     sudo docker build --pull --rm -f Dockerfile -t kby-ai-live:latest .
     ```
-  - Run the Docker container:
-    ```
+  - Run the `Docker` container:
+    ```bash
     sudo docker run -v ./license.txt:/home/openvino/kby-ai-live/license.txt -p 8080:8080 kby-ai-live
     ```
-  - Send us the machine code and then we will give you a license key.
+  - Send us the `machine code` and then we will give you a `license key`.
     
-    After that, update the license.txt file by overwriting the license key that you received. Then, run the Docker container again.
+    After that, update the `license.txt` file by overwriting the `license key` that you received. Then, run the `Docker` container again.
     
     ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/216f1306-a758-4e47-a8fe-159f3c84f53b)
     
     ![image](https://github.com/kby-ai/FaceLivenessDetection-Docker/assets/125717930/2eff3496-abc2-4e70-bee1-4195375f42e6)
 
 
-  - To test the API, you can use Postman. Here are the endpoints for testing:
+  - To test the API, you can use `Postman`. Here are the endpoints for testing:
 
-    Test with an image file: Send a POST request to http://{xx.xx.xx.xx}:8080/check_liveness.
+    Test with an image file: Send a `POST` request to `http://{xx.xx.xx.xx}:8080/check_liveness`.
     
-    Test with a base64-encoded image: Send a POST request to http://{xx.xx.xx.xx}:8080/check_liveness_base64.
+    Test with a `base64-encoded` image: Send a `POST` request to `http://{xx.xx.xx.xx}:8080/check_liveness_base64`.
     
-    You can download the Postman collection to easily access and use these endpoints. [click here](https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/main/postman/kby-ai-live.postman_collection.json)   
+    You can download the `Postman` collection to easily access and use these endpoints. [click here](https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/main/postman/kby-ai-live.postman_collection.json)   
 
 ### 3. Execute the Gradio demo
   - Setup Gradio
     Ensure that you have the necessary dependencies installed. 
     
-    Gradio requires Python 3.6 or above. 
+    `Gradio` requires `Python 3.6` or above. 
     
-    You can install Gradio using pip by running the following command:
-    ```
+    You can install `Gradio` using `pip` by running the following command:
+    ```bash
     pip install gradio
     ```
   - Run the demo
     Run it using the following command:
-    ```
+    ```bash
     cd gradio
     python demo.py
     ```
   - You can test within the following URL:    
-    http://127.0.0.1:9000    
+    `http://127.0.0.1:9000 `   
 ## About SDK
 
 ### 1. Initializing the SDK
 
 - Step One
 
-  First, obtain the machine code for activation and request a license based on the machine code.
-  ```
+  First, obtain the machine code for activation and request a license based on the `machine code`.
+  ```python
   machineCode = getMachineCode()
   print("machineCode: ", machineCode.decode('utf-8'))
   ```
@@ -155,25 +155,25 @@ This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a 
 - Step Two
 
   Next, activate the SDK using the received license.
-  ```
+  ```python
   setActivation(license.encode('utf-8'))
   ```  
-  If activation is successful, the return value will be SDK_SUCCESS. Otherwise, an error value will be returned.
+  If activation is successful, the return value will be `SDK_SUCCESS`. Otherwise, an error value will be returned.
 
 - Step Three
 
   After activation, call the initialization function of the SDK.
-  ```
+  ```python
   initSDK("data".encode('utf-8'))
   ```
   The first parameter is the path to the model.
 
-  If initialization is successful, the return value will be SDK_SUCCESS. Otherwise, an error value will be returned.
+  If initialization is successful, the return value will be `SDK_SUCCESS`. Otherwise, an error value will be returned.
 
 ### 2. Enum and Structure
   - SDK_ERROR
   
-    This enumeration represents the return value of the 'initSDK' and 'setActivation' functions.
+    This enumeration represents the return value of the `initSDK` and `setActivation` functions.
 
     | Feature| Value | Name |
     |------------------|------------------|------------------|
@@ -208,11 +208,11 @@ This project uses KBY-AI's Face Liveness Detection Server SDK, which requires a 
 ### 3. APIs
   - Face Detection
   
-    The Face SDK provides a single API for detecting faces, performing liveness detection, determining face orientation (yaw, roll, pitch), assessing face quality, detecting facial occlusion, eye closure, mouth opening, and identifying facial landmarks.
+    The `Face SDK` provides a single API for detecting faces, performing `liveness detection`, determining `face orientation` (yaw, roll, pitch), assessing `face quality`, detecting `facial occlusion`, `eye closure`, `mouth opening`, and identifying `facial landmarks`.
     
     The function can be used as follows:
 
-    ```
+    ```python
     faceBoxes = (FaceBox * maxFaceCount)()
     faceCount = faceDetection(image_np, image_np.shape[1], image_np.shape[0], faceBoxes, maxFaceCount)
     ```
