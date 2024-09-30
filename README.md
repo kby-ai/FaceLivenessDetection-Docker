@@ -218,11 +218,11 @@ This project uses `KBY-AI`'s `Face Liveness Detection` `Server SDK`, which requi
     ```
     
     This function requires 5 parameters.
-    * The first parameter: the byte array of the RGB image buffer.
+    * The first parameter: the byte array of the `RGB` image buffer.
     * The second parameter: the width of the image.
     * The third parameter: the height of the image.
-    * The fourth parameter: the 'FaceBox' array allocated with 'maxFaceCount' for storing the detected faces.
-    * The fifth parameter: the count allocated for the maximum 'FaceBox' objects.
+    * The fourth parameter: the `FaceBox` array allocated with `maxFaceCount` for storing the detected faces.
+    * The fifth parameter: the count allocated for the maximum `FaceBox` objects.
 
     The function returns the count of the detected face.
 
