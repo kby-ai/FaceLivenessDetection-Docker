@@ -229,3 +229,5 @@ This project uses `KBY-AI`'s `Face Liveness Detection` `Server SDK`, which requi
 ### 4. Thresholds
   The default thresholds are as the following below:
   https://github.com/kby-ai/FaceLivenessDetection-Docker/blob/1e89ec05f49d55807164a92d19abc5149054ce2a/app.py#L17-L29
+
+[![Visitors](https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2Fkby-ai%2FFaceLivenessDetection-Docker&countColor=%23263759)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fkby-ai%2FFaceLivenessDetection-Docker)
