@@ -43,8 +43,10 @@ It includes features that allow for testing `face liveness detection` using both
   |------------------|------------------|------------------|
   | ➡️        | <b>[Face Liveness Detection - Linux](https://github.com/kby-ai/FaceLivenessDetection-Docker)</b>    | <b>Face Livness Detection</b> |
   | 2        | [Face Liveness Detection - Windows](https://github.com/kby-ai/FaceLivenessDetection-Windows)    | Face Livness Detection |
-  | 3        | [Face Recognition - Linux](https://github.com/kby-ai/FaceRecognition-Docker)    | Face Recognition |
-  | 4        | [Face Recognition - Windows](https://github.com/kby-ai/FaceRecognition-Windows)    | Face Recognition |
+  | 3        | [Face Liveness Detection - C#](https://github.com/kby-ai/FaceLivenessDetection-CSharp-.Net)    | Face Livness Detection |
+  | 4        | [Face Recognition - Linux](https://github.com/kby-ai/FaceRecognition-Docker)    | Face Recognition |
+  | 5        | [Face Recognition - Windows](https://github.com/kby-ai/FaceRecognition-Windows)    | Face Recognition |
+  | 6        | [Face Recognition - C#](https://github.com/kby-ai/FaceRecognition-CSharp-.NET)    | Face Recognition |
 
 > To get `Face SDK(mobile)`, please visit products [here](https://github.com/kby-ai/Product):<br/>
 
